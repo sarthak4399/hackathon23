@@ -1,8 +1,10 @@
 import PropTypes from 'prop-types';
 import ArrowDownIcon from '@heroicons/react/24/solid/ArrowDownIcon';
 import ArrowUpIcon from '@heroicons/react/24/solid/ArrowUpIcon';
-import CurrencyDollarIcon from '@heroicons/react/24/solid/CurrencyDollarIcon';
-import { Avatar, Card, CardContent, Stack, SvgIcon, Typography } from '@mui/material';
+import {CurrencyDollarIcon , CalendarDaysIcon} from '@heroicons/react/24/solid';
+
+import { Avatar, Card, CardContent, Paper, Stack, SvgIcon, Typography } from '@mui/material';
+import ClockIcon from '@heroicons/react/24/solid/ClockIcon';
 
 export const OverviewBudget = (props) => {
   const { difference, positive = false, sx, value } = props;
@@ -21,7 +23,7 @@ export const OverviewBudget = (props) => {
               color="text.secondary"
               variant="overline"
             >
-              Budget
+            Todays View
             </Typography>
             <Typography variant="h4">
               {value}
@@ -35,7 +37,7 @@ export const OverviewBudget = (props) => {
             }}
           >
             <SvgIcon>
-              <CurrencyDollarIcon />
+              <CalendarDaysIcon/>
             </SvgIcon>
           </Avatar>
         </Stack>
@@ -46,7 +48,7 @@ export const OverviewBudget = (props) => {
             spacing={2}
             sx={{ mt: 2 }}
           >
-            <Stack
+            {/* <Stack
               alignItems="center"
               direction="row"
               spacing={0.5}
@@ -63,12 +65,12 @@ export const OverviewBudget = (props) => {
               >
                 {difference}%
               </Typography>
-            </Stack>
+            </Stack> */}
             <Typography
               color="text.secondary"
               variant="caption"
             >
-              Since last month
+              Complaints solved 
             </Typography>
           </Stack>
         )}

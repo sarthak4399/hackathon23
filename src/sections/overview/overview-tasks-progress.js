@@ -10,6 +10,7 @@ import {
   SvgIcon,
   Typography
 } from '@mui/material';
+import CurrencyDollarIcon from '@heroicons/react/24/solid/CurrencyDollarIcon';
 
 export const OverviewTasksProgress = (props) => {
   const { value, sx } = props;
@@ -43,16 +44,16 @@ export const OverviewTasksProgress = (props) => {
             }}
           >
             <SvgIcon>
-              <ListBulletIcon />
+              <CurrencyDollarIcon />
             </SvgIcon>
           </Avatar>
         </Stack>
-        <Box sx={{ mt: 3 }}>
+        {/* <Box sx={{ mt: 3 }}>
           <LinearProgress
             value={value}
             variant="determinate"
           />
-        </Box>
+        </Box> */}
       </CardContent>
     </Card>
   );

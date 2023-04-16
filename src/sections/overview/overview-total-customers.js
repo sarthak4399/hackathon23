@@ -3,6 +3,7 @@ import ArrowDownIcon from '@heroicons/react/24/solid/ArrowDownIcon';
 import ArrowUpIcon from '@heroicons/react/24/solid/ArrowUpIcon';
 import UsersIcon from '@heroicons/react/24/solid/UsersIcon';
 import { Avatar, Card, CardContent, Stack, SvgIcon, Typography } from '@mui/material';
+import { ClockIcon } from '@heroicons/react/24/solid';
 
 export const OverviewTotalCustomers = (props) => {
   const { difference, positive = false, sx, value } = props;
@@ -21,7 +22,7 @@ export const OverviewTotalCustomers = (props) => {
               color="text.secondary"
               variant="overline"
             >
-              Total Customers
+              History
             </Typography>
             <Typography variant="h4">
               {value}
@@ -35,7 +36,7 @@ export const OverviewTotalCustomers = (props) => {
             }}
           >
             <SvgIcon>
-              <UsersIcon />
+              <ClockIcon />
             </SvgIcon>
           </Avatar>
         </Stack>
@@ -46,7 +47,7 @@ export const OverviewTotalCustomers = (props) => {
             spacing={2}
             sx={{ mt: 2 }}
           >
-            <Stack
+            {/* <Stack
               alignItems="center"
               direction="row"
               spacing={0.5}
@@ -63,12 +64,12 @@ export const OverviewTotalCustomers = (props) => {
               >
                 {difference}%
               </Typography>
-            </Stack>
+            </Stack> */}
             <Typography
               color="text.secondary"
               variant="caption"
             >
-              Since last month
+           Reports
             </Typography>
           </Stack>
         )}
