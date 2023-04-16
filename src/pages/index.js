@@ -10,14 +10,14 @@ import { OverviewTasksProgress } from 'src/sections/overview/overview-tasks-prog
 import { OverviewTotalCustomers } from 'src/sections/overview/overview-total-customers';
 import { OverviewTotalProfit } from 'src/sections/overview/overview-total-profit';
 import { OverviewTraffic } from 'src/sections/overview/overview-traffic';
-
+import imagerep from '@heroicons/react/24/solid/WrenchScrewdriverIcon'
 const now = new Date();
 
 const Page = () => (
   <>
     <Head>
       <title>
-        Overview | Devias Kit
+        Admin | IndexIt
       </title>
     </Head>
     <Box
@@ -41,7 +41,7 @@ const Page = () => (
               difference={12}
               positive
               sx={{ height: '100%' }}
-              value="$24k"
+              value="10 "
             />
           </Grid>
           <Grid
@@ -53,7 +53,7 @@ const Page = () => (
               difference={16}
               positive={false}
               sx={{ height: '100%' }}
-              value="1.6k"
+              value="30 Days"
             />
           </Grid>
           <Grid
@@ -114,34 +114,17 @@ const Page = () => (
               products={[
                 {
                   id: '5ece2c077e39da27658aa8a9',
-                  image: '/assets/products/product-1.png',
-                  name: 'Healthcare Erbology',
+                  image: {imagerep},
+                  name: 'Malfunction of Fan',
                   updatedAt: subHours(now, 6).getTime()
                 },
                 {
                   id: '5ece2c0d16f70bff2cf86cd8',
                   image: '/assets/products/product-2.png',
-                  name: 'Makeup Lancome Rouge',
+                  name: 'Tap Reparing in SHSB03',
                   updatedAt: subDays(subHours(now, 8), 2).getTime()
                 },
-                {
-                  id: 'b393ce1b09c1254c3a92c827',
-                  image: '/assets/products/product-5.png',
-                  name: 'Skincare Soja CO',
-                  updatedAt: subDays(subHours(now, 1), 1).getTime()
-                },
-                {
-                  id: 'a6ede15670da63f49f752c89',
-                  image: '/assets/products/product-6.png',
-                  name: 'Makeup Lipstick',
-                  updatedAt: subDays(subHours(now, 3), 3).getTime()
-                },
-                {
-                  id: 'bcad5524fe3a2f8f8620ceda',
-                  image: '/assets/products/product-7.png',
-                  name: 'Healthcare Ritual',
-                  updatedAt: subDays(subHours(now, 5), 6).getTime()
-                }
+                
               ]}
               sx={{ height: '100%' }}
             />
