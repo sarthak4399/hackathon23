@@ -10,11 +10,11 @@ import {
 } from '@mui/material';
 
 const user = {
-  avatar: '/assets/avatars/avatar-anika-visser.png',
+  avatar: '/assets/avatars/emma.png',
   city: 'Los Angeles',
   country: 'INDIA',
   jobTitle: 'NA',
-  name: 'Kalyani Kolte',
+  name: 'Emma Watson',
   timezone: 'Mumbai-kolkata'
 };
 

@@ -155,9 +155,9 @@ const Page = () => (
               orders={[
                 {
                   id: 'f69f88012978187a6c12897f',
-                  ref: 'DEV1049',
+                  ref: '',
                   amount: 30.5,
-                  customer: {
+                  c: {
                     name: 'Ekaterina Tankova'
                   },
                   createdAt: 1555016400000,

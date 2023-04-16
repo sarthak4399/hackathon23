@@ -29,23 +29,26 @@ export const OverviewLatestOrders = (props) => {
 
   return (
     <Card sx={sx}>
-      <CardHeader title="Latest Orders" />
+      <CardHeader title="Gate Entry Table" />
       <Scrollbar sx={{ flexGrow: 1 }}>
         <Box sx={{ minWidth: 800 }}>
           <Table>
             <TableHead>
               <TableRow>
                 <TableCell>
-                  Order
+                  Entries
                 </TableCell>
                 <TableCell>
-                  Customer
+                  Name
                 </TableCell>
                 <TableCell sortDirection="desc">
                   Date
                 </TableCell>
                 <TableCell>
-                  Status
+                  Phone No.
+                </TableCell>
+                <TableCell>
+                  In time/ Out time
                 </TableCell>
               </TableRow>
             </TableHead>
