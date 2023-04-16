@@ -33,7 +33,9 @@
     "react-apexcharts": "1.4.0",
     "react-dom": "18.2.0",
     "react-scripts": "^5.0.1",
+    "react-typed": "^1.2.0",
     "simplebar-react": "^3.2.1",
+    "typed.js": "^2.0.12",
     "yup": "1.0.0"
   },
   "devDependencies": {

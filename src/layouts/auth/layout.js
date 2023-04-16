@@ -2,6 +2,8 @@ import PropTypes from 'prop-types';
 import NextLink from 'next/link';
 import { Box, Typography, Unstable_Grid2 as Grid } from '@mui/material';
 import { Logo } from 'src/components/logo';
+import logo1 from '@heroicons/react/24/solid/BookOpenIcon';
+import Typed from 'react-typed';
 
 // TODO: Change subtitle text
 
@@ -73,7 +75,7 @@ export const Layout = (props) => {
               align="center"
               color="inherit"
               sx={{
-                fontSize: '24px',
+                fontSize: '40px',
                 lineHeight: '32px',
                 mb: 1
               }}
@@ -93,14 +95,24 @@ export const Layout = (props) => {
               sx={{ mb: 3 }}
               variant="subtitle1"
             >
-              Mannage your management assets smartly 
+             <Typed
+                    strings={['Mannage your management assets smartly ']}
+                    typeSpeed={100}
+                    backSpeed={100}
+                    loop
+                /> 
               <Typography>
-                Use IndexIt !
+              <Typed
+                    strings={['Use IndexIt ! ']}
+                    typeSpeed={100}
+                    
+                
+                /> 
               </Typography>
             </Typography>
             <img
               alt=""
-              src="/assets/auth-illustration.svg"
+              src={logo1}
             />
           </Box>
         </Grid>

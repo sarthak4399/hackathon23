@@ -120,7 +120,7 @@ const Page = () => (
                 },
                 {
                   id: '5ece2c0d16f70bff2cf86cd8',
-                  image: '/assets/products/product-2.png',
+                  image: {imagerep},
                   name: 'Tap Reparing in SHSB03',
                   updatedAt: subDays(subHours(now, 8), 2).getTime()
                 },
@@ -140,7 +140,7 @@ const Page = () => (
                   id: 'f69f88012978187a6c12897f',
                   ref: '',
                   amount: 30.5,
-                  c: {
+                  customer: {
                     name: 'Ekaterina Tankova'
                   },
                   createdAt: 1555016400000,
