@@ -25,8 +25,8 @@ const Page = () => {
   const [method, setMethod] = useState('email');
   const formik = useFormik({
     initialValues: {
-      email: 'sarthak@Indexit.io',
-      password: 'Password123!',
+      email: '',
+      password: '',
       submit: null
     },
     validationSchema: Yup.object({
@@ -41,13 +41,36 @@ const Page = () => {
         .required('Password is required')
     }),
     onSubmit: async (values, helpers) => {
+      // try {
+      //   await auth.signIn(values.email, values.password);
+      //   router.push('/');
+      // } catch (err) {
+      //   helpers.setStatus({ success: false });
+      //   helpers.setErrors({ submit: err.message });
+      //   helpers.setSubmitting(false);
+      // }
       try {
-        await auth.signIn(values.email, values.password);
-        router.push('/');
-      } catch (err) {
-        helpers.setStatus({ success: false });
-        helpers.setErrors({ submit: err.message });
-        helpers.setSubmitting(false);
+        const response = await fetch('http://localhost:5030/login', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(values),
+        });
+
+        alert("Login successfull!");
+      
+        if (!response.ok) {
+          const errorData = await response.json();
+          throw new Error(errorData.error);
+        }
+      
+        router.push('/'); // replace '/dashboard' with the page you want to redirect to after registration
+      } catch (error) {
+        formik.setStatus({ success: false });
+        formik.setErrors({ submit: error.message });
+        formik.setSubmitting(false);
+        alert("Invalid credentials");
       }
     }
   });
@@ -140,6 +163,7 @@ const Page = () => {
                     fullWidth
                     helperText={formik.touched.email && formik.errors.email}
                     label="Email Address"
+                    id="email"
                     name="email"
                     onBlur={formik.handleBlur}
                     onChange={formik.handleChange}

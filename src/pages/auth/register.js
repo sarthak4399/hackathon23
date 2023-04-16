@@ -15,6 +15,7 @@ const Page = () => {
       email: '',
       name: '',
       password: '',
+      role:'',
       submit: null
     },
     validationSchema: Yup.object({
@@ -30,16 +31,40 @@ const Page = () => {
       password: Yup
         .string()
         .max(255)
-        .required('Password is required')
+        .required('Password is required'),
+      role: Yup
+        .string()
+        .max(255)
+        .required('role is required')
     }),
     onSubmit: async (values, helpers) => {
+      // try {
+      //   await auth.signUp(values.email, values.name, values.password);
+      //   router.push('/register');
+      // } catch (err) {
+      //   helpers.setStatus({ success: false });
+      //   helpers.setErrors({ submit: err.message });
+      //   helpers.setSubmitting(false);
+      // }
       try {
-        await auth.signUp(values.email, values.name, values.password);
-        router.push('/');
-      } catch (err) {
-        helpers.setStatus({ success: false });
-        helpers.setErrors({ submit: err.message });
-        helpers.setSubmitting(false);
+        const response = await fetch('http://localhost:5030/register', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(values),
+        });
+      
+        if (!response.ok) {
+          const errorData = await response.json();
+          throw new Error(errorData.error);
+        }
+      
+        router.push('/auth/login'); // replace '/dashboard' with the page you want to redirect to after registration
+      } catch (error) {
+        formik.setStatus({ success: false });
+        formik.setErrors({ submit: error.message });
+        formik.setSubmitting(false);
       }
     }
   });
@@ -101,6 +126,7 @@ const Page = () => {
                   fullWidth
                   helperText={formik.touched.name && formik.errors.name}
                   label="Name"
+                  id='name'
                   name="name"
                   onBlur={formik.handleBlur}
                   onChange={formik.handleChange}
@@ -111,6 +137,7 @@ const Page = () => {
                   fullWidth
                   helperText={formik.touched.email && formik.errors.email}
                   label="Email Address"
+                  id='email'
                   name="email"
                   onBlur={formik.handleBlur}
                   onChange={formik.handleChange}
@@ -122,11 +149,24 @@ const Page = () => {
                   fullWidth
                   helperText={formik.touched.password && formik.errors.password}
                   label="Password"
+                  id='password'
                   name="password"
                   onBlur={formik.handleBlur}
                   onChange={formik.handleChange}
                   type="password"
                   value={formik.values.password}
+                />
+                 <TextField
+                  error={!!(formik.touched.password && formik.errors.password)}
+                  fullWidth
+                  helperText={formik.touched.password && formik.errors.password}
+                  label="Role"
+                  id='role'
+                  name="role"
+                  onBlur={formik.handleBlur}
+                  onChange={formik.handleChange}
+                  type="role"
+                  value={formik.values.role}
                 />
               </Stack>
               {formik.errors.submit && (
@@ -144,6 +184,7 @@ const Page = () => {
                 sx={{ mt: 3 }}
                 type="submit"
                 variant="contained"
+                
               >
                 Continue
               </Button>
