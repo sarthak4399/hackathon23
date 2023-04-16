@@ -47,7 +47,7 @@ const Page = () => {
       //   helpers.setSubmitting(false);
       // }
       try {
-        const response = await fetch('http://localhost:5030/register', {
+        const response = await fetch('http://localhost:3000/register', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -60,7 +60,7 @@ const Page = () => {
           throw new Error(errorData.error);
         }
       
-        router.push('/auth/login'); // replace '/dashboard' with the page you want to redirect to after registration
+        router.push('/'); // replace '/dashboard' with the page you want to redirect to after registration
       } catch (error) {
         formik.setStatus({ success: false });
         formik.setErrors({ submit: error.message });

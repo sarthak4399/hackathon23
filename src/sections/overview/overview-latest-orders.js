@@ -1,6 +1,7 @@
 import { format } from 'date-fns';
 import PropTypes from 'prop-types';
 import ArrowRightIcon from '@heroicons/react/24/solid/ArrowRightIcon';
+import { useEffect ,useState } from 'react';
 import {
   Box,
   Button,
@@ -13,7 +14,8 @@ import {
   TableBody,
   TableCell,
   TableHead,
-  TableRow
+  TableRow,
+  sx
 } from '@mui/material';
 import { Scrollbar } from 'src/components/scrollbar';
 import { SeverityPill } from 'src/components/severity-pill';
@@ -25,36 +27,51 @@ const statusMap = {
 };
 
 export const OverviewLatestOrders = (props) => {
-  const { orders = [], sx } = props;
+  const [equipment, setEquipment] = useState([])
+
+  const fetchData = () => {
+    fetch('https://raw.githubusercontent.com/hindavilande05/testAPI/master/equipment.json')
+      .then(response => {
+        return response.json()
+      })
+      .then(data => {
+        setEquipment(data.equipment)
+      })
+  }
+console.log(equipment);
+
+  useEffect(() => {
+    fetchData()
+  }, [])
 
   return (
     <Card sx={sx}>
-      <CardHeader title="Gate Entry Table" />
+      <CardHeader title="Equipment Issued" />
       <Scrollbar sx={{ flexGrow: 1 }}>
         <Box sx={{ minWidth: 800 }}>
           <Table>
             <TableHead>
               <TableRow>
                 <TableCell>
-                  Entries
+                  ID
                 </TableCell>
                 <TableCell>
-                  Name
+                 Equipment Name
                 </TableCell>
-                <TableCell sortDirection="desc">
-                  Date
-                </TableCell>
-                <TableCell>
-                  Phone No.
+                <TableCell >
+                  Avaliable Qty
                 </TableCell>
                 <TableCell>
-                  In time/ Out time
+                  Issued Qty
+                </TableCell>
+                <TableCell>
+                  Issued Date
                 </TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
-              {orders.map((order) => {
-                const createdAt = format(order.createdAt, 'dd/MM/yyyy');
+              {equipment.map((order) => {
+                // const createdAt = format(equipment.createdAt, 'dd/MM/yyyy');
 
                 return (
                   <TableRow
@@ -62,18 +79,26 @@ export const OverviewLatestOrders = (props) => {
                     key={order.id}
                   >
                     <TableCell>
-                      {order.ref}
+                      {order.id}
+                    </TableCell>
+
+                    <TableCell>
+                      {order.EqpName}
                     </TableCell>
                     <TableCell>
-                      {order.customer.name}
+                      {order.availableQty}
                     </TableCell>
                     <TableCell>
-                      {createdAt}
+                      {order.issuedQty}
                     </TableCell>
                     <TableCell>
-                      <SeverityPill color={statusMap[order.status]}>
+                      {order.issueDate}
+                    </TableCell>
+
+                    <TableCell>
+                      {/* <SeverityPill color={statusMap[order.status]}>
                         {order.status}
-                      </SeverityPill>
+                      </SeverityPill> */}
                     </TableCell>
                   </TableRow>
                 );
