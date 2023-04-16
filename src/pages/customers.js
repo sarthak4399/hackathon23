@@ -4,30 +4,19 @@ import { subDays, subHours } from 'date-fns';
 import ArrowDownOnSquareIcon from '@heroicons/react/24/solid/ArrowDownOnSquareIcon';
 import ArrowUpOnSquareIcon from '@heroicons/react/24/solid/ArrowUpOnSquareIcon';
 import PlusIcon from '@heroicons/react/24/solid/PlusIcon';
-import { Box, Button, Container, Stack, SvgIcon, Typography } from '@mui/material';
+import { CardActions, Divider, CardHeader, CardContent, Grid, TextField, InputAdornment, OutlinedInput, Card, Box, Button, Container, Stack, SvgIcon, Typography } from '@mui/material';
 import { useSelection } from 'src/hooks/use-selection';
 import { Layout as DashboardLayout } from 'src/layouts/dashboard/layout';
 import { CustomersTable } from 'src/sections/customer/customers-table';
 import { CustomersSearch } from 'src/sections/customer/customers-search';
 import { applyPagination } from 'src/utils/apply-pagination';
+import MagnifyingGlassIcon from '@heroicons/react/24/solid/MagnifyingGlassIcon';
+import { spacing } from '@mui/system';
+
 
 const now = new Date();
 
 const data = [
-  {
-    id: '5e887ac47eed253091be10cb',
-    address: {
-      city: 'Malkapur',
-      country: 'India',
-      state: 'Maharashtra',
-      street: '7896 Buldana Road'
-    },
-    avatar: '/assets/avatars/avatar-carson-darrin.png',
-    createdAt: subDays(subHours(now, 8), 1).getTime(),
-    email: 'demo.demo@demo.io',
-    name: 'Shantanu Pande',
-    phone: '304-428-3097'
-  },
   {
     id: '5e887b209c28ac3dd97f6db5',
     address: {
@@ -176,6 +165,125 @@ const Page = () => {
                 </Button>
               </div>
             </Stack>
+
+            
+              <Card>
+                <CardHeader
+                  // subheader="Add Entry"
+                  title="Add Entry"
+                />
+                <CardContent sx={{ pt: 0,
+                                  my: -3 }}>
+                  <Box sx={{ mx: 1.5,
+                            my: 1.5 }}>
+                    <Grid
+                      container
+                      spacing={3}
+                      sx={{gap:2,display:'flex' ,flexDirection:'row'}}
+                    >
+                      <Grid
+                        xs={7}
+                        md={6}
+                      >
+                        <TextField
+                          fullWidth
+                          // helperText="Please specify the first name"
+                          label="First name"
+                          name="firstName"
+                          // onChange={handleChange}
+                          required
+                          // value={values.firstName}
+                        />
+                      </Grid>
+                      <Grid
+                        xs={7}
+                        md={6}
+                      >
+                        <TextField
+                          fullWidth
+                          label="Last name"
+                          name="lastName"
+                          // onChange={handleChange}
+                          required
+                          // value={values.lastName}
+                        />
+                      </Grid>
+                      <Grid
+                        xs={7}
+                        md={6}
+                      >
+                        <TextField
+                          fullWidth
+                          label="Email Address"
+                          name="email"
+                          // onChange={handleChange}
+                          required
+                          // value={values.email}
+                        />
+                      </Grid>
+                      {/* <Grid
+                        xs={7}
+                        md={6}
+                      >
+                        <TextField
+                          fullWidth
+                          label="Location"
+                          name="location"
+                          // onChange={handleChange}
+                          required
+                          // value={values.country}
+                        />
+                      </Grid> */}
+                      <Grid
+                        xs={7}
+                        md={6}
+                      >
+                        <TextField
+                          fullWidth
+                          label="Phone Number"
+                          name="phone"
+                          // onChange={handleChange}
+                          type="number"
+                          required
+                          // value={values.phone}
+                        />
+                      </Grid>
+                      {/* <Grid
+                        xs={12}
+                        md={6}
+                      >
+                        <TextField
+                          fullWidth
+                          label="Select State"
+                          name="state"
+                          // onChange={handleChange}
+                          required
+                          select
+                          // SelectProps={{ native: true }}
+                          // value={values.state}
+                        >
+                          {states.map((option) => (
+                            <option
+                              key={option.value}
+                              value={option.value}
+                            >
+                              {option.label}
+                            </option>
+                          ))}
+                        </TextField>
+                      </Grid> */}
+                    </Grid>
+                  </Box>
+                </CardContent>
+                <Divider />
+                <CardActions sx={{ justifyContent: 'flex-end' }}>
+                  <Button variant="contained" sx={{}}>
+                    Save details
+                  </Button>
+                </CardActions>
+              </Card>
+          
+
             <CustomersSearch />
             <CustomersTable
               count={data.length}
