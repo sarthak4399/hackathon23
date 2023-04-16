@@ -225,7 +225,7 @@ const Page = () => {
                   direction="row"
                   spacing={1}
                 >
-                  <Button
+                  {/* <Button
                     color="inherit"
                     startIcon={(
                       <SvgIcon fontSize="small">
@@ -234,8 +234,8 @@ const Page = () => {
                     )}
                   >
                     Import
-                  </Button>
-                  <Button
+                  </Button> */}
+                  {/* <Button
                     color="inherit"
                     startIcon={(
                       <SvgIcon fontSize="small">
@@ -244,7 +244,7 @@ const Page = () => {
                     )}
                   >
                     Export
-                  </Button>
+                  </Button> */}
                 </Stack>
               </Stack>
               <div>

@@ -85,7 +85,7 @@ export const Layout = (props) => {
                 sx={{ color: '#15B79E' }}
                 target="_blank"
               >
-                Devias Kit
+                IndexIt
               </Box>
             </Typography>
             <Typography
@@ -93,7 +93,10 @@ export const Layout = (props) => {
               sx={{ mb: 3 }}
               variant="subtitle1"
             >
-              A professional kit that comes with ready-to-use MUI components.
+              Mannage your management assets smartly 
+              <Typography>
+                Use IndexIt !
+              </Typography>
             </Typography>
             <img
               alt=""

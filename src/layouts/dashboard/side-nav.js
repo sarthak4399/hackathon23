@@ -124,7 +124,7 @@ export const SideNav = (props) => {
           </Stack>
         </Box>
         <Divider sx={{ borderColor: 'neutral.700' }} />
-        <Box
+        {/* <Box
           sx={{
             px: 2,
             py: 3
@@ -157,8 +157,8 @@ export const SideNav = (props) => {
               alt="Go to pro"
               src="/assets/devias-kit-pro.png"
             />
-          </Box>
-          <Button
+          </Box> */}
+          {/* <Button
             component="a"
             endIcon={(
               <SvgIcon fontSize="small">
@@ -172,8 +172,8 @@ export const SideNav = (props) => {
             variant="contained"
           >
             Pro Live Preview
-          </Button>
-        </Box>
+          </Button> */}
+        {/* </Box> */}
       </Box>
     </Scrollbar>
   );
