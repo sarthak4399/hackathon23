@@ -27,16 +27,7 @@ export const items = [
       </SvgIcon>
     )
   },
-  {
-    title: 'Companies',
-    path: '/companies',
-    icon: (
-      <SvgIcon fontSize="small">
-        <ShoppingBagIcon />
-      </SvgIcon>
-    )
-  },
-  {
+   {
     title: 'Account',
     path: '/account',
     icon: (
@@ -50,7 +41,7 @@ export const items = [
     path: '/settings',
     icon: (
       <SvgIcon fontSize="small">
-        <CogIcon />
+        <UserIcon />
       </SvgIcon>
     )
   },
@@ -69,15 +60,6 @@ export const items = [
     icon: (
       <SvgIcon fontSize="small">
         <UserPlusIcon />
-      </SvgIcon>
-    )
-  },
-  {
-    title: 'Error',
-    path: '/404',
-    icon: (
-      <SvgIcon fontSize="small">
-        <XCircleIcon />
       </SvgIcon>
     )
   }
