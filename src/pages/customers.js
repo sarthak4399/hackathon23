@@ -1,5 +1,6 @@
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useMemo } from 'react';
 import Head from 'next/head';
+import React, { useState } from 'react';
 import { subDays, subHours } from 'date-fns';
 import ArrowDownOnSquareIcon from '@heroicons/react/24/solid/ArrowDownOnSquareIcon';
 import ArrowUpOnSquareIcon from '@heroicons/react/24/solid/ArrowUpOnSquareIcon';
@@ -10,8 +11,10 @@ import { Layout as DashboardLayout } from 'src/layouts/dashboard/layout';
 import { CustomersTable } from 'src/sections/customer/customers-table';
 import { CustomersSearch } from 'src/sections/customer/customers-search';
 import { applyPagination } from 'src/utils/apply-pagination';
-
+import AddEntry from "./AddEntry"
 const now = new Date();
+
+
 
 const data = [
   {
@@ -70,7 +73,7 @@ const data = [
     name: 'Hindavi Lande',
     phone: '908-691-3'
   }
-]; 
+];
 
 const useCustomers = (page, rowsPerPage) => {
   return useMemo(
@@ -96,7 +99,10 @@ const Page = () => {
   const customers = useCustomers(page, rowsPerPage);
   const customersIds = useCustomerIds(customers);
   const customersSelection = useSelection(customersIds);
-
+  const [isOpen, setIsOpen] = useState(false);
+  const handleClick = () => {
+    setIsOpen(!isOpen);
+  };
   const handlePageChange = useCallback(
     (event, value) => {
       setPage(value);
@@ -134,17 +140,40 @@ const Page = () => {
             >
               <Stack spacing={1}>
                 <Typography variant="h4">
-                  Customers
+                  Entries 
                 </Typography>
                 <Stack
                   alignItems="center"
                   direction="row"
                   spacing={1}
                 >
+                  {/* <Button
+                    color="inherit"
+                    startIcon={(
+                      <SvgIcon fontSize="small">
+                        <ArrowUpOnSquareIcon />
+                      </SvgIcon>
+                    )}
+                  >
+                    Import
+                  </Button> */}
+                  {/* <Button
+                    color="inherit"
+                    startIcon={(
+                      <SvgIcon fontSize="small">
+                        <ArrowDownOnSquareIcon />
+                      </SvgIcon>
+                    )}
+                  >
+                    Export
+                  </Button> */}
+                  {/* <AddEntry/> */}
                 </Stack>
+
               </Stack>
               <div>
                 <Button
+                  onClick={handleClick}
                   startIcon={(
                     <SvgIcon fontSize="small">
                       <PlusIcon />
@@ -154,6 +183,7 @@ const Page = () => {
                 >
                   Add
                 </Button>
+                {isOpen && <AddEntry />}
               </div>
             </Stack>
             <CustomersSearch />
@@ -184,3 +214,4 @@ Page.getLayout = (page) => (
 );
 
 export default Page;
+

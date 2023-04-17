@@ -13,28 +13,24 @@ import {
 
 const states = [
   {
-    value: 'alabama',
-    label: 'Alabama'
+    value: 'maharashtra',
+    label: 'Maharashtra'
   },
   {
-    value: 'new-york',
-    label: 'New York'
+    value: 'gujrat',
+    label: 'Gaujrat'
   },
   {
-    value: 'san-francisco',
-    label: 'San Francisco'
+    value: 'Karnataka',
+    label: 'Karnataka'
   },
-  {
-    value: 'los-angeles',
-    label: 'Los Angeles'
-  }
 ];
 
 export const AccountProfileDetails = () => {
   const [values, setValues] = useState({
-    firstName: 'Kalyani',
-    lastName: 'Kolte',
-    email: 'kalyani@kolte.io',
+    firstName: 'Hindavi',
+    lastName: 'lande',
+    email: '2022bcs505@sggs.ac.in',
     phone: '',
     state: 'Nanded-Vishnupuri',
     country: 'India'

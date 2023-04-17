@@ -11,11 +11,11 @@ import {
 
 const user = {
   avatar: '/assets/avatars/emma.png',
-  city: 'Los Angeles',
+  city: 'Nanded',
   country: 'INDIA',
-  jobTitle: 'NA',
-  name: 'Emma Watson',
-  timezone: 'Mumbai-kolkata'
+  jobTitle: 'Admin',
+  name: 'Hindavi Lande',
+  timezone: 'Kolkata'
 };
 
 export const AccountProfile = () => (

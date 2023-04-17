@@ -32,7 +32,7 @@ export const OverviewTasksProgress = (props) => {
               gutterBottom
               variant="overline"
             >
-             Vacancies
+             Avaliablity
             </Typography>
             <Typography variant="h4">
               {value}%
@@ -50,12 +50,7 @@ export const OverviewTasksProgress = (props) => {
             </SvgIcon>
           </Avatar>
         </Stack>
-        {/* <Box sx={{ mt: 3 }}>
-          <LinearProgress
-            value={value}
-            variant="determinate"
-          />
-        </Box> */}
+       
       </CardContent>
     </Card>
   );

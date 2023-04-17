@@ -101,7 +101,7 @@ const Page = () => (
           >
             <OverviewTraffic
               chartSeries={[63, 15, 22]}
-              labels={['Desktop', 'Tablet', 'Phone']}
+              labels={['Electricians', 'Carpenter', 'Plumber']}
               sx={{ height: '100%' }}
             />
           </Grid>
@@ -114,16 +114,23 @@ const Page = () => (
               products={[
                 {
                   id: '5ece2c077e39da27658aa8a9',
-                  image: {imagerep},
+                  image: "",
                   name: 'Malfunction of Fan',
                   updatedAt: subHours(now, 6).getTime()
                 },
                 {
                   id: '5ece2c0d16f70bff2cf86cd8',
-                  image: {imagerep},
+                  image:"",
+                  name: 'Door lock  Reparing in SHSB02',
+                  updatedAt: subDays(subHours(now, 8), 2).getTime()
+                },
+                {
+                  id: '5ece2c0d16f70bff2cf86cd8',
+                  image:"",
                   name: 'Tap Reparing in SHSB03',
                   updatedAt: subDays(subHours(now, 8), 2).getTime()
                 },
+                
                 
               ]}
               sx={{ height: '100%' }}

@@ -8,14 +8,8 @@ export const CustomersSearch = () => (
       fullWidth
       placeholder="Search customer"
       startAdornment={(
-        <InputAdornment position="start">
-          <SvgIcon
-            color="action"
-            fontSize="small"
-          >
-            <MagnifyingGlassIcon />
-          </SvgIcon>
-        </InputAdornment>
+  
+        <></>
       )}
       sx={{ maxWidth: 500 }}
     />

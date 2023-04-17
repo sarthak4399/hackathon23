@@ -61,13 +61,7 @@ export const CompanyCard = (props) => {
           >
             <ClockIcon />
           </SvgIcon>
-          <Typography
-            color="text.secondary"
-            display="inline"
-            variant="body2"
-          >
-            Updated 2hr ago
-          </Typography>
+          
         </Stack>
         <Stack
           alignItems="center"

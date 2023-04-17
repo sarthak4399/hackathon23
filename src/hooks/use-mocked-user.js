@@ -3,8 +3,8 @@ export const useMockedUser = () => {
   // `const { user } = useAuth();`
   return {
     id: '5e86809283e28b96d2d38537',
-    avatar: '/assets/avatars/emma.png',
-    name: 'Emma',
-    email: 'demo@emma.io'
+    avatar: '/assets/',
+    name: 'Hindavi',
+    email: '2022bcs505@gmail.com'
   };
 };
