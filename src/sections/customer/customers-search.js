@@ -1,6 +1,6 @@
 import MagnifyingGlassIcon from '@heroicons/react/24/solid/MagnifyingGlassIcon';
 import { Card, InputAdornment, OutlinedInput, SvgIcon } from '@mui/material';
-import AddEntry from './addEntry';
+import AddEntry from "./AddEntry"
 
 export const CustomersSearch = () => (
   <Card sx={{ p: 2 }}>
@@ -14,6 +14,7 @@ export const CustomersSearch = () => (
             color="action"
             fontSize="small"
           >
+            {/* <AddEntry/> */}
             <MagnifyingGlassIcon />
           </SvgIcon>
         </InputAdornment>
