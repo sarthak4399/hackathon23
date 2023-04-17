@@ -60,7 +60,7 @@ const Page = () => {
           throw new Error(errorData.error);
         }
       
-        router.push('/'); // replace '/dashboard' with the page you want to redirect to after registration
+        router.push('/auth/login'); // replace '/dashboard' with the page you want to redirect to after registration
       } catch (error) {
         formik.setStatus({ success: false });
         formik.setErrors({ submit: error.message });
