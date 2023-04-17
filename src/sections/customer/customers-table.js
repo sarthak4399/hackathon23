@@ -62,13 +62,13 @@ export const CustomersTable = (props) => {
                   Email
                 </TableCell>
                 <TableCell>
-                  Location
-                </TableCell>
-                <TableCell>
                   Phone
                 </TableCell>
                 <TableCell>
-                  Signed Up
+                  component
+                </TableCell>
+                <TableCell>
+                  Purpose
                 </TableCell>
               </TableRow>
             </TableHead>
@@ -76,7 +76,6 @@ export const CustomersTable = (props) => {
               {items.map((customer) => {
                 const isSelected = selected.includes(customer.id);
                 const createdAt = format(customer.createdAt, 'dd/MM/yyyy');
-
                 return (
                   <TableRow
                     hover
@@ -113,13 +112,13 @@ export const CustomersTable = (props) => {
                       {customer.email}
                     </TableCell>
                     <TableCell>
-                      {customer.address.city}, {customer.address.state}, {customer.address.country}
-                    </TableCell>
-                    <TableCell>
                       {customer.phone}
                     </TableCell>
                     <TableCell>
-                      {createdAt}
+                      {customer.component}
+                    </TableCell>
+                    <TableCell>
+                    {customer.purpose}
                     </TableCell>
                   </TableRow>
                 );
