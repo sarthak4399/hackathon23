@@ -81,7 +81,7 @@ const AddEntry = () => {
   };
   return (
     <div>
-      <form onSubmit={handleSubmit1} >
+      <form onSubmit={handleSubmit} >
         <Card>
           <CardHeader title="Add Entry" />
           <CardContent sx={{ pt: 1, my: -3 }}>
@@ -153,7 +153,7 @@ const AddEntry = () => {
           </CardContent>
           <Divider />
           <CardActions sx={{ justifyContent: "flex-end" }}>
-            <Button variant="contained" type="submit" sx={{ mx: 20 }} onClick={console.log('hello')}>
+            <Button variant="contained" type="submit" sx={{ mx: 20 }} >
               Save details
             </Button>
           </CardActions>

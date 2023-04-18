@@ -50,7 +50,7 @@ const Page = () => {
       //   helpers.setSubmitting(false);
       // }
       try {
-        const response = await fetch('http://localhost:5050/login', {
+        const response = await fetch('http://localhost:3000/login', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -203,14 +203,14 @@ const Page = () => {
                 >
                   Continue
                 </Button>
-                {/* <Button
+                <Button
                   fullWidth
                   size="large"
                   sx={{ mt: 3 }}
                   onClick={handleSkip}
                 >
                   Skip authentication
-                </Button> */}
+                </Button>
                 <Alert
                   color="primary"
                   severity="info"
