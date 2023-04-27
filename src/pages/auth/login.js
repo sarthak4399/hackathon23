@@ -64,8 +64,8 @@ const Page = () => {
           const errorData = await response.json();
           throw new Error(errorData.error);
         }
-      
-        router.push('/'); // replace '/dashboard' with the page you want to redirect to after registration
+        router.push('/');
+        [auth, router]// replace '/dashboard' with the page you want to redirect to after registration
       } catch (error) {
         formik.setStatus({ success: false });
         formik.setErrors({ submit: error.message });
